@@ -25,14 +25,18 @@ export class View implements IView {
     this.camera.lookAt(new THREE.Vector3(0, 0, 0));
 
     // add objects into scene
-    const axesHelper = new THREE.AxesHelper(5);
-    this.scene.add(axesHelper);
     this.scene.add(this.ambientLight);
     this.scene.add(this.directionalLight);
     this.scene.add(this.group);
 
     this.controls = new OrbitControls(this.camera, this.viewCanvas.getElement());
     this.controls.enableDamping = true;
+  }
+
+  setCenter(center: THREE.Vector3): void {
+    this.camera.lookAt(center);
+    this.controls.target.set(center.x, center.y, center.z);
+    this.controls.update();
   }
 
   getCamera(): THREE.PerspectiveCamera {
