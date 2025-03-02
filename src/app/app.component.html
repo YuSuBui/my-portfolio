@@ -1,1 +1,54 @@
-<router-outlet></router-outlet>
+<div class="d-md-flex">
+  <!-- Sidebar -->
+  <div class="sidebar d-none d-md-block p-3">
+    <h4>Sidebar</h4>
+    <input type="text" pInputText class="form-control search-input" placeholder="Search..."
+      [(ngModel)]="searchValues" />
+    <ul class="nav flex-column">
+      <ng-container *ngFor="let item of filteredList">
+        <li class="nav-item"><a routerLink="{{item.href}}" routerLinkActive="{{item.active}}"
+            class="nav-link text-white">{{ item.name }}</a></li>
+      </ng-container>
+    </ul>
+    <div class="absolute bottom-0 right-0 font-bold">
+      <p-button icon="pi pi-angle-double-left" severity="primary" [style]="{ width: '64px', height: '64px'}" />
+    </div>
+  </div>
+
+  <!-- Main content -->
+  <div class="flex-grow-1 main-content">
+    <!-- Navbar for smaller screens -->
+    <nav class="navbar navbar-expand-md navbar-dark d-md-none">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Brand</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <ng-container *ngFor="let item of list">
+              <li class="nav-item"><a class="nav-link" href="#">{{ item.name }}</a></li>
+            </ng-container>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container-fluid m-0 p-0">
+      <router-outlet></router-outlet>
+    </div>
+
+    <!-- Sticked Card Component -->
+    <!-- <div class="sticked-card bg-dark">
+      <div class="collapse" id="navbarHeader">
+        <div class="container">
+          <h5>Sticky Card</h5>
+          <p>This card stays at the bottom of the page.</p>
+        </div>
+      </div>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+  </div> -->
+  </div>
+</div>
