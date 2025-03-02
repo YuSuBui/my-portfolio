@@ -9,9 +9,12 @@ import { AppComponent } from './app.component';
 import { InputTextModule } from 'primeng/inputtext';
 import { ButtonModule } from 'primeng/button';
 
+import { IntersectPlaneComponent } from './component/intersect-plane/intersect-plane.component';
+
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    IntersectPlaneComponent
   ],
   imports: [
     BrowserModule,
