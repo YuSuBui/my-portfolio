@@ -12,7 +12,7 @@ export const intersections: THREE.Vector3[][] = [
     ],
     [
         new THREE.Vector3(0, 0, 0),
-        new THREE.Vector3(-5, -5, -12),
+        new THREE.Vector3(-1.0, -1.5, -12),
     ],
     [
         new THREE.Vector3(0, 0, 0),

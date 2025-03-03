@@ -47,6 +47,15 @@ export class View implements IView {
     return this.group;
   }
 
+  dispose(): void {
+    // remove all objects from scene
+    this.scene.remove(this.group);
+    this.controls.dispose();
+    this.disposeNode(this.group);
+    
+    this.viewCanvas.getRenderer().dispose();
+  }
+
   public setDirty(dirty: boolean): void {
     this.dirty = dirty;
   }
@@ -68,4 +77,22 @@ export class View implements IView {
     this.controls.update();
   }
 
+  private disposeNode(node: any): void {
+    if (!node) return;
+    if (node.children) { 
+      node.children.forEach((child: any) => {
+        this.disposeNode(child);
+      });
+      node.children = [];
+    }
+    if (node.geometry && node.geometry instanceof THREE.BufferGeometry) {
+      node.geometry.dispose();
+    }
+    if (node.material && node.material instanceof THREE.Material) {
+      node.material.dispose();
+      if (node.material.texture && node.material.texture instanceof THREE.Texture) {
+        node.material.texture.dispose();
+      }
+    }
+  }
 }

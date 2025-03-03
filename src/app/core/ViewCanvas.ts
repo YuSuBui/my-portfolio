@@ -50,4 +50,8 @@ export class ViewCanvas implements IViewCanvas {
   public render(): void {
     this.view.render(this.renderer);
   }
+
+  public getRenderer(): THREE.WebGLRenderer {
+    return this.renderer;
+  }
 }

@@ -7,4 +7,5 @@ export interface IView {
 
   getMainGroup(): THREE.Group;
 
+  dispose(): void;
 }

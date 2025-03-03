@@ -3,8 +3,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { IntersectPlaneComponent } from './component/intersect-plane/intersect-plane.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'intersection', pathMatch: 'full' },
-  { path: 'intersection', component: IntersectPlaneComponent },
+  { path: '', redirectTo: 'intersect-plane', pathMatch: 'full' },
+  { path: 'intersect-plane', component: IntersectPlaneComponent },
 ];
 
 @NgModule({

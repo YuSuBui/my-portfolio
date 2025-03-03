@@ -11,8 +11,8 @@ export class AppComponent {
   list = [
     {
       id: "e6c9be40-189b-4c49-9b53-8136319452cc",
-      name: "Intersection",
-      href: "intersection",
+      name: "Intersect plane",
+      href: "intersect-plane",
       active: true
     },
     {
@@ -23,8 +23,8 @@ export class AppComponent {
     },
     {
       id: "4dd92f46-5dd5-40aa-92b0-ea8564406e0e",
-      name: "Item 3",
-      href: "",
+      name: "Item 2",
+      href: "item-b",
       active: false
     }
   ];
