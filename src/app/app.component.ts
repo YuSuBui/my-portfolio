@@ -21,12 +21,12 @@ export class AppComponent {
       href: "particle-point",
       active: false
     },
-    {
-      id: "4dd92f46-5dd5-40aa-92b0-ea8564406e0e",
-      name: "Item 2",
-      href: "item-b",
-      active: false
-    }
+    // {
+    //   id: "4dd92f46-5dd5-40aa-92b0-ea8564406e0e",
+    //   name: "Item 2",
+    //   href: "item-b",
+    //   active: false
+    // }
   ];
 
   ngOnInit(): void {
