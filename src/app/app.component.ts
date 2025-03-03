@@ -17,8 +17,8 @@ export class AppComponent {
     },
     {
       id: "8d6647c8-a16c-4fc4-94d9-cff09214e33c",
-      name: "Item 1",
-      href: "item-a",
+      name: "Particle points",
+      href: "particle-point",
       active: false
     },
     {
